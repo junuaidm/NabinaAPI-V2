@@ -1,0 +1,17 @@
+C:\Users\e3f1nf5\source\repos\Nabina.eCommerce\Nbn.eCommerce.ItemService\bin\Debug\netcoreapp2.2\appsettings.Development.json
+C:\Users\e3f1nf5\source\repos\Nabina.eCommerce\Nbn.eCommerce.ItemService\bin\Debug\netcoreapp2.2\appsettings.json
+C:\Users\e3f1nf5\source\repos\Nabina.eCommerce\Nbn.eCommerce.ItemService\bin\Debug\netcoreapp2.2\Properties\launchSettings.json
+C:\Users\e3f1nf5\source\repos\Nabina.eCommerce\Nbn.eCommerce.ItemService\bin\Debug\netcoreapp2.2\Nbn.eCommerce.ItemService.xml
+C:\Users\e3f1nf5\source\repos\Nabina.eCommerce\Nbn.eCommerce.ItemService\bin\Debug\netcoreapp2.2\Nbn.eCommerce.ItemService.deps.json
+C:\Users\e3f1nf5\source\repos\Nabina.eCommerce\Nbn.eCommerce.ItemService\bin\Debug\netcoreapp2.2\Nbn.eCommerce.ItemService.runtimeconfig.json
+C:\Users\e3f1nf5\source\repos\Nabina.eCommerce\Nbn.eCommerce.ItemService\bin\Debug\netcoreapp2.2\Nbn.eCommerce.ItemService.runtimeconfig.dev.json
+C:\Users\e3f1nf5\source\repos\Nabina.eCommerce\Nbn.eCommerce.ItemService\bin\Debug\netcoreapp2.2\Nbn.eCommerce.ItemService.dll
+C:\Users\e3f1nf5\source\repos\Nabina.eCommerce\Nbn.eCommerce.ItemService\bin\Debug\netcoreapp2.2\Nbn.eCommerce.ItemService.pdb
+C:\Users\e3f1nf5\source\repos\Nabina.eCommerce\Nbn.eCommerce.ItemService\obj\Debug\netcoreapp2.2\Nbn.eCommerce.ItemService.csprojAssemblyReference.cache
+C:\Users\e3f1nf5\source\repos\Nabina.eCommerce\Nbn.eCommerce.ItemService\obj\Debug\netcoreapp2.2\Nbn.eCommerce.ItemService.RazorAssemblyInfo.cache
+C:\Users\e3f1nf5\source\repos\Nabina.eCommerce\Nbn.eCommerce.ItemService\obj\Debug\netcoreapp2.2\Nbn.eCommerce.ItemService.RazorAssemblyInfo.cs
+C:\Users\e3f1nf5\source\repos\Nabina.eCommerce\Nbn.eCommerce.ItemService\obj\Debug\netcoreapp2.2\Nbn.eCommerce.ItemService.AssemblyInfoInputs.cache
+C:\Users\e3f1nf5\source\repos\Nabina.eCommerce\Nbn.eCommerce.ItemService\obj\Debug\netcoreapp2.2\Nbn.eCommerce.ItemService.AssemblyInfo.cs
+C:\Users\e3f1nf5\source\repos\Nabina.eCommerce\Nbn.eCommerce.ItemService\obj\Debug\netcoreapp2.2\Nbn.eCommerce.ItemService.RazorTargetAssemblyInfo.cache
+C:\Users\e3f1nf5\source\repos\Nabina.eCommerce\Nbn.eCommerce.ItemService\obj\Debug\netcoreapp2.2\Nbn.eCommerce.ItemService.dll
+C:\Users\e3f1nf5\source\repos\Nabina.eCommerce\Nbn.eCommerce.ItemService\obj\Debug\netcoreapp2.2\Nbn.eCommerce.ItemService.pdb

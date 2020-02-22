@@ -1,0 +1,935 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Nbn.eCommerce.ItemService</name>
+    </assembly>
+    <members>
+        <member name="F:Nbn.eCommerce.ItemService.Common.DatabaseNameConstant.Nbm">
+            <summary>
+            Building Material databse
+            </summary>
+        </member>
+        <member name="F:Nbn.eCommerce.ItemService.Common.DatabaseNameConstant.NbmKm">
+            <summary>
+            Kitchen Databse
+            </summary>
+        </member>
+        <member name="F:Nbn.eCommerce.ItemService.Controllers.DivisionsController.logger">
+            <summary>
+            The logger.
+            </summary>
+        </member>
+        <member name="F:Nbn.eCommerce.ItemService.Controllers.DivisionsController.divisionService">
+            <summary>
+            division service
+            </summary>
+        </member>
+        <member name="F:Nbn.eCommerce.ItemService.Controllers.ItemsController.logger">
+            <summary>
+            The logger
+            </summary>
+        </member>
+        <member name="F:Nbn.eCommerce.ItemService.Controllers.ItemsController.itemsService">
+            <summary>
+            item service
+            </summary>
+        </member>
+        <member name="M:Nbn.eCommerce.ItemService.Controllers.ItemsController.GetCategoriesByDivision(System.Int32,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Get List of categories by division.
+            </summary>
+            <param name="disisionId">disision Id</param>
+            <param name="dbName">Datebase Name</param>
+            <param name="ctok">Cancellation token.</param>
+            <returns>resturns list of categories.</returns>
+        </member>
+        <member name="F:Nbn.eCommerce.ItemService.Program.logger">
+            <summary>
+            Log handler.
+            </summary>
+        </member>
+        <member name="F:Nbn.eCommerce.ItemService.Repository.BuildingMaterialRepository.dbConnection">
+            <summary>
+            A database connection
+            </summary>
+        </member>
+        <member name="F:Nbn.eCommerce.ItemService.Repository.BuildingMaterialRepository.logger">
+            <summary>
+            Log handler
+            </summary>
+        </member>
+        <member name="M:Nbn.eCommerce.ItemService.Repository.BuildingMaterialRepository.GetItemTypes(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            
+            </summary>
+            <param name="disisionId"></param>
+            <param name="ctok"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nbn.eCommerce.ItemService.Repository.IBuildingMaterialRepository.GetItemTypes(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            
+            </summary>
+            <param name="disisionId"></param>
+            <param name="ctok"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nbn.eCommerce.ItemService.Repository.IBuildingMaterialRepository.GetAllDivision(System.Threading.CancellationToken)">
+            <summary>
+            
+            </summary>
+            <param name="ctok"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nbn.eCommerce.ItemService.Repository.IBuildingMaterialRepository.GetDivisionById(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            
+            </summary>
+            <param name="divisionId"></param>
+            <param name="ctok"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nbn.eCommerce.ItemService.Repository.IKitchenRepository.GetItemTypes(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            
+            </summary>
+            <param name="disisionId"></param>
+            <param name="ctok"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nbn.eCommerce.ItemService.Repository.IKitchenRepository.GetAllDivision(System.Threading.CancellationToken)">
+            <summary>
+            
+            </summary>
+            <param name="ctok"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nbn.eCommerce.ItemService.Repository.IKitchenRepository.GetDivisionById(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            
+            </summary>
+            <param name="divisionId"></param>
+            <param name="ctok"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Nbn.eCommerce.ItemService.Repository.KitchenRepository.dbConnection">
+            <summary>
+            A database connection
+            </summary>
+        </member>
+        <member name="F:Nbn.eCommerce.ItemService.Repository.KitchenRepository.logger">
+            <summary>
+            Log handler
+            </summary>
+        </member>
+        <member name="M:Nbn.eCommerce.ItemService.Repository.KitchenRepository.GetItemTypes(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            
+            </summary>
+            <param name="disisionId"></param>
+            <param name="ctok"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nbn.eCommerce.ItemService.Repository.KitchenRepository.GetAllDivision(System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Nbn.eCommerce.ItemService.Repository.KitchenRepository.GetDivisionById(System.Int32,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="T:Nbn.eCommerce.ItemService.Security.ClientSourcedString">
+            <summary>
+            This class ensures that the string content passed to its consturctor when it's created
+            is Html Encoded when it is accessed.  This is to prevent CrLf injection attacks in our code.
+            </summary>
+        </member>
+        <member name="M:Nbn.eCommerce.ItemService.Security.ClientSourcedString.op_Implicit(System.String)~Nbn.eCommerce.ItemService.Security.ClientSourcedString">
+            <summary>
+            Implicit operator overload for equating a string to a ClientSourcedString
+            </summary>
+            <param name="value">Untrusted string value</param>
+        </member>
+        <member name="M:Nbn.eCommerce.ItemService.Security.ClientSourcedString.op_Implicit(Nbn.eCommerce.ItemService.Security.ClientSourcedString)~System.String">
+            <summary>
+            Implicit operator overload for equating a ClientSourcedString to a string
+            </summary>
+            <param name="source"></param>
+        </member>
+        <member name="M:Nbn.eCommerce.ItemService.Security.ClientSourcedString.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Nbn.eCommerce.ItemService.Security.ClientSourcedString"/> class.
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:Nbn.eCommerce.ItemService.Security.ClientSourcedString.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Nbn.eCommerce.ItemService.Security.ClientSourcedString"/> class.
+            Constructor
+            </summary>
+            <param name="value">Untrusted source string</param>
+        </member>
+        <member name="M:Nbn.eCommerce.ItemService.Security.ClientSourcedString.#ctor(Nbn.eCommerce.ItemService.Security.ClientSourcedString)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Nbn.eCommerce.ItemService.Security.ClientSourcedString"/> class.
+            Copy Constructor
+            </summary>
+            <param name="value">Another instance of a ClientSourcedString</param>
+        </member>
+        <member name="M:Nbn.eCommerce.ItemService.Security.ClientSourcedString.ToTrustedString">
+            <summary>
+            Explicit Method for converting untrusted to trusted content
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nbn.eCommerce.ItemService.Security.ClientSourcedString.ToString">
+            <summary>
+            ToString overload
+            </summary>
+            <returns>HTML encoded string</returns>
+        </member>
+        <member name="T:Nbn.eCommerce.ItemService.Security.ClientSourcedStringJsonConverter">
+            <summary>
+            Custom JSON Converter that allows the C# 'string' type to be mapped and converted to a ClientSourcedString.
+            </summary>
+        </member>
+        <member name="T:Nbn.eCommerce.ItemService.Security.ClientSourcedStringTypeConverter">
+            <summary>
+            This is a custom type converter that allows MVC parameter binding to map 'string' to ClientSourcedString.
+            </summary>
+        </member>
+        <member name="F:Nbn.eCommerce.ItemService.Service.DivisionService.logger">
+            <summary>
+            Logger handler
+            </summary>
+        </member>
+        <member name="F:Nbn.eCommerce.ItemService.Service.DivisionService.buildingMaterial">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Nbn.eCommerce.ItemService.Service.DivisionService.kitchen">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Nbn.eCommerce.ItemService.Service.DivisionService.#ctor(Nbn.eCommerce.ItemService.Repository.IBuildingMaterialRepository,Nbn.eCommerce.ItemService.Repository.IKitchenRepository,Microsoft.Extensions.Logging.ILogger{Nbn.eCommerce.ItemService.Service.DivisionService})">
+            <summary>
+            
+            </summary>
+            <param name="buildingMaterial"></param>
+            <param name="kitchen"></param>
+            <param name="logger"></param>
+        </member>
+        <member name="M:Nbn.eCommerce.ItemService.Service.IDivisionService.GetAllDivision(System.Threading.CancellationToken)">
+            <summary>
+            
+            </summary>
+            <param name="ctok"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nbn.eCommerce.ItemService.Service.IDivisionService.GetDivisionById(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            
+            </summary>
+            <param name="divisionId"></param>
+            <param name="ctok"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nbn.eCommerce.ItemService.Service.IItemsService.GetCategoriesByDivision(System.Int32,System.String,System.Threading.CancellationToken)">
+            <summary>
+            This returns List of Categories
+            </summary>
+            <param name="disisionId">disision Id</param>
+            <param name="dbName">Datebase Name</param>
+            <param name="ctok">Cancellation token</param>
+            <returns>An array of courier information objects</returns>
+        </member>
+        <member name="F:Nbn.eCommerce.ItemService.Service.ItemsService.logger">
+            <summary>
+            Logger handler
+            </summary>
+        </member>
+        <member name="F:Nbn.eCommerce.ItemService.Service.ItemsService.buildingMaterial">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Nbn.eCommerce.ItemService.Service.ItemsService.kitchen">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Nbn.eCommerce.ItemService.Service.ItemsService.#ctor(Nbn.eCommerce.ItemService.Repository.IBuildingMaterialRepository,Nbn.eCommerce.ItemService.Repository.IKitchenRepository,Microsoft.Extensions.Logging.ILogger{Nbn.eCommerce.ItemService.Service.ItemsService})">
+            <summary>
+            
+            </summary>
+            <param name="buildingMaterial"></param>
+            <param name="kitchen"></param>
+            <param name="logger"></param>
+        </member>
+        <member name="M:Nbn.eCommerce.ItemService.Service.ItemsService.GetCategoriesByDivision(System.Int32,System.String,System.Threading.CancellationToken)">
+            <summary>
+            This Get List of Categories
+            </summary>
+            <param name="disisionId">disision Id</param>
+            <param name="dbName">Datebase Name</param>
+            <param name="ctok">Cancellation token</param>
+            <returns>An array of courier information objects</returns>
+        </member>
+        <member name="T:Nbn.eCommerce.ItemService.Startup">
+            <summary>
+            Startup class.
+            </summary>
+        </member>
+        <member name="M:Nbn.eCommerce.ItemService.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Logging.ILogger{Nbn.eCommerce.ItemService.Startup})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Nbn.eCommerce.ItemService.Startup"/> class.
+            Returns queue information based on given values.
+            </summary>
+            <param name="configuration">configuration</param>
+            <param name="fileLogger">filelogger</param>
+        </member>
+        <member name="P:Nbn.eCommerce.ItemService.Startup.Configuration">
+            <summary>
+            Gets configuration handle
+            </summary>
+        </member>
+        <member name="M:Nbn.eCommerce.ItemService.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            This method gets called by the runtime. Use this method to add services to the container.
+            </summary>
+            <param name="services">Service collection handle</param>
+        </member>
+        <member name="T:Nbn.eCommerce.ItemService.Utility.ControllerCommonFunctionality">
+            <summary>
+            This holds the common functionality for the controllers. This
+            could also be moved into a base class.
+            </summary>
+        </member>
+        <member name="M:Nbn.eCommerce.ItemService.Utility.ControllerCommonFunctionality.ToApiGetResponse``2(``0,Microsoft.AspNetCore.Mvc.ControllerBase)">
+            <summary>
+            This is used to return the ServiceGetResultCode for the
+            associated ServiceGetResult.ResultCode.
+            </summary>
+            <typeparam name="T">This is the ServiceGetResult type</typeparam>
+            <typeparam name="U">This is the response object that is held by this</typeparam>
+            <param name="result">This is ServiceResultCode corresponding to the
+            result code</param>
+            <param name="controllerBase">The Web API controller</param>
+            <returns>This is the IActionResult that corresponds to the result code</returns>
+        </member>
+        <member name="M:Nbn.eCommerce.ItemService.Utility.ControllerCommonFunctionality.ToApiChangeResponse``1(``0,Microsoft.AspNetCore.Mvc.ControllerBase)">
+            <summary>
+            This is used to retrieve the response for a service change result.
+            </summary>
+            <typeparam name="T">This is the service result type</typeparam>
+            <param name="result">This is the result</param>
+            <param name="controllerBase">Controller base</param>
+            <returns>The corresponding action</returns>
+        </member>
+        <member name="M:Nbn.eCommerce.ItemService.Utility.ControllerCommonFunctionality.ToApiCreateResponse``2(``0,Microsoft.AspNetCore.Mvc.ControllerBase)">
+            <summary>
+            This is used to return the ServiceCreateResultCode for the
+            associated ServiceCreateResult.ResultCode.
+            </summary>
+            <typeparam name="T">This is the ServiceCreateResult type</typeparam>
+            <typeparam name="U">This is the response object that is held by this</typeparam>
+            <param name="result">This is ServiceResultCode corresponding to the
+            result code</param>
+            <param name="controllerBase">The Web API controller</param>
+            <returns>This is the IActionResult that corresponds to the result code</returns>
+        </member>
+        <member name="F:Nbn.eCommerce.ItemService.Utility.DapperExtension.asyncPolicy">
+            <summary>
+            Policy handler.
+            </summary>
+        </member>
+        <member name="F:Nbn.eCommerce.ItemService.Utility.DapperExtension.retryHook">
+            <summary>
+            Function that caller can provide to hook the OnRetry function
+            for logging purposes, etc.
+            </summary>
+        </member>
+        <member name="M:Nbn.eCommerce.ItemService.Utility.DapperExtension.Init(System.Int32,System.Int32,System.Action{System.Exception,System.TimeSpan,System.Int32})">
+            <summary>
+            Initializes database retry policy.
+            </summary>
+            <param name="retryCount">How many times Polly needs to retry incase of recoverable exception.</param>
+            <param name="maxRetryDelayInSeconds">What is the delay in between each retry incase of recoverable exception.</param>
+            <param name="onRetry">Optional function that caller can provide to hook the OnRetry function for logging purposes, etc.</param>
+        </member>
+        <member name="M:Nbn.eCommerce.ItemService.Utility.DapperExtension.ReInit(System.Int32,System.Int32,System.Action{System.Exception,System.TimeSpan,System.Int32})">
+            <summary>
+            Re-Initializes database retry policy.
+            </summary>
+            <param name="retryCount">How many times Polly needs to retry incase of recoverable exception.</param>
+            <param name="maxRetryDelayInSeconds">What is the delay in between each retry incase of recoverable exception.</param>
+            <param name="onRetry">Optional function that caller can provide to hook the OnRetry function for logging purposes, etc.</param>
+        </member>
+        <member name="M:Nbn.eCommerce.ItemService.Utility.DapperExtension.QueryFirstOrDefaultAsyncWithRetry``1(System.Data.IDbConnection,Dapper.CommandDefinition)">
+            <summary>
+            Executes given command asynchronously.
+            </summary>
+            <typeparam name="T">The type of the return object.</typeparam>
+            <param name="dbConnection">The database connection to execute on.</param>
+            <param name="commandDefinition">The command to execute.</param>
+            <returns>Returns List Of Objects.</returns>
+        </member>
+        <member name="M:Nbn.eCommerce.ItemService.Utility.DapperExtension.QueryAsyncWithRetry``1(System.Data.IDbConnection,Dapper.CommandDefinition)">
+            <summary>
+            Executes given command with retires and returns result set.
+            </summary>
+            <typeparam name="T">type of the return object.</typeparam>
+            <param name="dbConnection">database connection.</param>
+            <param name="commandDefinition">command definition.</param>
+            <returns>result set.</returns>
+        </member>
+        <member name="M:Nbn.eCommerce.ItemService.Utility.DapperExtension.QuerySingleOrDefaultAsyncWithRetry``1(System.Data.IDbConnection,Dapper.CommandDefinition)">
+            <summary>
+            Executes given single row command asynchronously.
+            </summary>
+            <typeparam name="T">The type of the return object.</typeparam>
+            <param name="dbConnection">The database connection to execute on.</param>
+            <param name="commandDefinition">The command to execute.</param>
+            <returns>Returns Single Object or Null.</returns>
+        </member>
+        <member name="M:Nbn.eCommerce.ItemService.Utility.DapperExtension.ExecuteAsyncWithRetry(System.Data.IDbConnection,Dapper.CommandDefinition)">
+            <summary>
+            Executes given command asynchronously.
+            </summary>
+            <param name="dbConnection">The connection to execute on.</param>
+            <param name="commandDefinition">The command to execute.</param>
+            <returns>The number of rows affected.</returns>
+        </member>
+        <member name="M:Nbn.eCommerce.ItemService.Utility.DapperExtension.ExecuteAsyncWithTransactionAndRetry(System.Data.IDbConnection,Dapper.CommandDefinition[],System.Boolean)">
+            <summary>
+            Executes given commands asynchronously.
+            </summary>
+            <param name="dbConnection">The connection to execute on.</param>
+            <param name="commandDefinition">The command to execute.</param>
+            <param name="ignoreAffectedRowsCount">Ignore sql command affected rows count.</param>
+            <returns>True/False.</returns>
+        </member>
+        <member name="M:Nbn.eCommerce.ItemService.Utility.DapperExtension.CheckInitialization">
+            <summary>
+            Common function for validating that retry policy has been initialized.
+            </summary>
+        </member>
+        <member name="T:Nbn.eCommerce.ItemService.Utility.EnumNameConverter">
+            <summary>
+            Converts enumerations into thier string description during JSON serialization
+            </summary>
+        </member>
+        <member name="M:Nbn.eCommerce.ItemService.Utility.EnumNameConverter.WriteJson(Newtonsoft.Json.JsonWriter,System.Object,Newtonsoft.Json.JsonSerializer)">
+            <summary>
+            Writes the JSON representation of the object.
+            </summary>
+            <param name="writer">The <see cref="T:Newtonsoft.Json.JsonWriter"/> to write to.</param>
+            <param name="value">The value.</param>
+            <param name="serializer">The calling serializer.</param>
+        </member>
+        <member name="M:Nbn.eCommerce.ItemService.Utility.Guard.AgainstNullOrEmptyEnumerable(System.Collections.IEnumerable,System.String,System.String,System.Int32,System.String)">
+            <summary>
+            Guard against null or empty enumerable.
+            </summary>
+            <param name="value">The IEnumerable to evaulate.</param>
+            <param name="name">The object name used in logging.</param>
+            <param name="file">Optional file name.</param>
+            <param name="line">Optional line number.</param>
+            <param name="method">Optional method name.</param>
+            <exception cref="T:System.ArgumentException">The IEnumerable is null or empty.</exception>
+            <exception cref="T:System.ArgumentNullException">The IEnumerable is null.</exception>
+        </member>
+        <member name="T:Nbn.eCommerce.ItemService.Utility.MethodInfo">
+            <summary>
+            Method info class
+            </summary>
+        </member>
+        <member name="M:Nbn.eCommerce.ItemService.Utility.MethodInfo.GetMethodName(System.String)">
+            <summary>
+            Get the name of the calling method.
+            </summary>
+            <param name="name">Default name, leave this alone.</param>
+            <returns>The name of the calling method.</returns>
+        </member>
+        <member name="M:Nbn.eCommerce.ItemService.Utility.MethodInfo.GetFileName(System.String)">
+            <summary>
+            Get the name of the file containing the calling method.
+            </summary>
+            <param name="path">Default path, leave this alone.</param>
+            <returns>The name of the file containing the calling method.</returns>
+        </member>
+        <member name="M:Nbn.eCommerce.ItemService.Utility.MethodInfo.GetLineNumber(System.Int32)">
+            <summary>
+            Get the calling line number.
+            </summary>
+            <param name="line">Default line, leave this alone.</param>
+            <returns>The calling line number.</returns>
+        </member>
+        <member name="M:Nbn.eCommerce.ItemService.Utility.MethodInfo.GetInfo(System.String,System.Int32,System.String)">
+            <summary>
+            Get a string representation of the method info.
+            </summary>
+            <param name="path">Default path, leave this alone.</param>
+            <param name="line">Default line, leave this alone.</param>
+            <param name="name">Default name, leave this alone.</param>
+            <returns>A string representation of the method info.</returns>
+        </member>
+        <member name="T:Nbn.eCommerce.ItemService.Utility.RepositoryChangeResult">
+            <summary>
+            Resource describing the result of a repository request that changes resource state.
+            </summary>
+        </member>
+        <member name="M:Nbn.eCommerce.ItemService.Utility.RepositoryChangeResult.#ctor(Nbn.eCommerce.ItemService.Utility.RepositoryChangeResultCode)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Nbn.eCommerce.ItemService.Utility.RepositoryChangeResult"/> class.
+            </summary>
+            <param name="resultCode">Enum describing the possible expected results of the operation</param>
+        </member>
+        <member name="P:Nbn.eCommerce.ItemService.Utility.RepositoryChangeResult.ResultCode">
+            <summary>
+            Gets or sets the result code.
+            </summary>
+        </member>
+        <member name="T:Nbn.eCommerce.ItemService.Utility.RepositoryChangeResultCode">
+            <summary>
+            Result code describing possible results from a repository request that changes resource state.
+            </summary>
+        </member>
+        <member name="F:Nbn.eCommerce.ItemService.Utility.RepositoryChangeResultCode.Success">
+            <summary>
+            Success
+            </summary>
+        </member>
+        <member name="F:Nbn.eCommerce.ItemService.Utility.RepositoryChangeResultCode.NotFound">
+            <summary>
+            Not found
+            </summary>
+        </member>
+        <member name="F:Nbn.eCommerce.ItemService.Utility.RepositoryChangeResultCode.VersionConflict">
+            <summary>
+            Version Conflict
+            </summary>
+        </member>
+        <member name="T:Nbn.eCommerce.ItemService.Utility.RepositoryCreateResult`1">
+            <summary>
+            Standard response object from create requests against a repository
+            </summary>
+            <typeparam name="TKey">The object type of the unique identifier for the resource managed by the repository</typeparam>
+        </member>
+        <member name="M:Nbn.eCommerce.ItemService.Utility.RepositoryCreateResult`1.#ctor(Nbn.eCommerce.ItemService.Utility.RepositoryCreateResultCode,`0)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Nbn.eCommerce.ItemService.Utility.RepositoryCreateResult`1"/> class.
+            </summary>
+            <param name="resultCode">Enum describing possible expected results of the operation</param>
+            <param name="identifier">The identifier assigned to the new resource that was created</param>
+        </member>
+        <member name="P:Nbn.eCommerce.ItemService.Utility.RepositoryCreateResult`1.ResultCode">
+            <summary>
+            Gets or sets the ResultCode.
+            </summary>
+        </member>
+        <member name="P:Nbn.eCommerce.ItemService.Utility.RepositoryCreateResult`1.Identifier">
+            <summary>
+            Gets or sets the identifier.
+            </summary>
+        </member>
+        <member name="T:Nbn.eCommerce.ItemService.Utility.RepositoryCreateResultCode">
+            <summary>
+            Result code describing possible results from a repository request that creates a new resource.
+            </summary>
+        </member>
+        <member name="F:Nbn.eCommerce.ItemService.Utility.RepositoryCreateResultCode.Success">
+            <summary>
+            Success
+            </summary>
+        </member>
+        <member name="F:Nbn.eCommerce.ItemService.Utility.RepositoryCreateResultCode.ResourceAlreadyExists">
+            <summary>
+            Resource already exists
+            </summary>
+        </member>
+        <member name="T:Nbn.eCommerce.ItemService.Utility.RepositoryGetResult`1">
+            <summary>
+            Resource describing the result of a repository request that reads resource state.
+            </summary>
+            <typeparam name="TResource">Type of repository result being returned.</typeparam>
+        </member>
+        <member name="M:Nbn.eCommerce.ItemService.Utility.RepositoryGetResult`1.#ctor(Nbn.eCommerce.ItemService.Utility.RepositoryGetResultCode,`0)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Nbn.eCommerce.ItemService.Utility.RepositoryGetResult`1"/> class.
+            </summary>
+            <param name="resultCode">A result code enumeration describing the possible results of the operation</param>
+            <param name="resource">The resource being returned if the query was successsful.</param>
+        </member>
+        <member name="P:Nbn.eCommerce.ItemService.Utility.RepositoryGetResult`1.ResultCode">
+            <summary>
+            Gets or sets the ResultCode
+            </summary>
+        </member>
+        <member name="P:Nbn.eCommerce.ItemService.Utility.RepositoryGetResult`1.Resource">
+            <summary>
+            Gets or sets the Resource
+            </summary>
+        </member>
+        <member name="T:Nbn.eCommerce.ItemService.Utility.RepositoryGetResultCode">
+            <summary>
+             Result code describing possible results from a repository request that changes resource state.
+            </summary>
+        </member>
+        <member name="F:Nbn.eCommerce.ItemService.Utility.RepositoryGetResultCode.Success">
+            <summary>
+            Resource was found
+            </summary>
+        </member>
+        <member name="F:Nbn.eCommerce.ItemService.Utility.RepositoryGetResultCode.NotFound">
+            <summary>
+            Resource was not found
+            </summary>
+        </member>
+        <member name="T:Nbn.eCommerce.ItemService.Utility.ServiceChangeResult">
+            <summary>
+            Describes the result of a service operation that changes the state of resources
+            </summary>
+        </member>
+        <member name="M:Nbn.eCommerce.ItemService.Utility.ServiceChangeResult.#ctor(Nbn.eCommerce.ItemService.Utility.ServiceChangeResultCode,System.Collections.Generic.IEnumerable{System.ComponentModel.DataAnnotations.ValidationResult})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Nbn.eCommerce.ItemService.Utility.ServiceChangeResult"/> class.
+            </summary>
+            <param name="resultCode">Inidcates success or failure of operation</param>
+            <param name="validationErrors">Validation errors that occurred during the execution of the request.</param>
+        </member>
+        <member name="P:Nbn.eCommerce.ItemService.Utility.ServiceChangeResult.ResultCode">
+            <summary>
+            Gets or sets the operation result code
+            </summary>
+        </member>
+        <member name="P:Nbn.eCommerce.ItemService.Utility.ServiceChangeResult.ValidationErrors">
+            <summary>
+            Gets or sets the list of errors that resulted from the operation.
+            </summary>
+        </member>
+        <member name="T:Nbn.eCommerce.ItemService.Utility.ServiceChangeResultCode">
+            <summary>
+            Service Change Result Codes
+            </summary>
+        </member>
+        <member name="F:Nbn.eCommerce.ItemService.Utility.ServiceChangeResultCode.Success">
+            <summary>
+            Success
+            </summary>
+        </member>
+        <member name="F:Nbn.eCommerce.ItemService.Utility.ServiceChangeResultCode.ValidationErrors">
+            <summary>
+            Validation errors
+            </summary>
+        </member>
+        <member name="F:Nbn.eCommerce.ItemService.Utility.ServiceChangeResultCode.NotFound">
+            <summary>
+            Not found
+            </summary>
+        </member>
+        <member name="F:Nbn.eCommerce.ItemService.Utility.ServiceChangeResultCode.VersionConflict">
+            <summary>
+            Version conflict
+            </summary>
+        </member>
+        <member name="F:Nbn.eCommerce.ItemService.Utility.ServiceChangeResultCode.InternalError">
+            <summary>
+            Internal error
+            </summary>
+        </member>
+        <member name="T:Nbn.eCommerce.ItemService.Utility.ServiceCreateResult`1">
+            <summary>
+            Describes the result of a service operation that changes the state of resources
+            </summary>
+            <typeparam name="TKey">The object type of the identifier for the resource that was created</typeparam>
+        </member>
+        <member name="M:Nbn.eCommerce.ItemService.Utility.ServiceCreateResult`1.#ctor(Nbn.eCommerce.ItemService.Utility.ServiceCreateResultCode,`0,System.Collections.Generic.IEnumerable{System.ComponentModel.DataAnnotations.ValidationResult})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Nbn.eCommerce.ItemService.Utility.ServiceCreateResult`1"/> class.
+            </summary>
+            <param name="resultCode">Indicates success or failure of operation</param>
+            <param name="identifier">Identifier of newly created resource</param>
+            <param name="validationErrors">Validation errors that occurred during the execution of the request.</param>
+        </member>
+        <member name="P:Nbn.eCommerce.ItemService.Utility.ServiceCreateResult`1.ResultCode">
+            <summary>
+            Gets or sets the operation result code
+            </summary>
+        </member>
+        <member name="P:Nbn.eCommerce.ItemService.Utility.ServiceCreateResult`1.ValidationErrors">
+            <summary>
+            Gets or sets the list of errors that resulted from the operation.
+            </summary>
+        </member>
+        <member name="P:Nbn.eCommerce.ItemService.Utility.ServiceCreateResult`1.Identifier">
+            <summary>
+            Gets or sets Identifier
+            </summary>
+        </member>
+        <member name="T:Nbn.eCommerce.ItemService.Utility.ServiceCreateResultCode">
+            <summary>
+            Service Create Result Codes
+            </summary>
+        </member>
+        <member name="F:Nbn.eCommerce.ItemService.Utility.ServiceCreateResultCode.Success">
+            <summary>
+            Success
+            </summary>
+        </member>
+        <member name="F:Nbn.eCommerce.ItemService.Utility.ServiceCreateResultCode.ResourceAlreadyExists">
+            <summary>
+            Resource already exists
+            </summary>
+        </member>
+        <member name="F:Nbn.eCommerce.ItemService.Utility.ServiceCreateResultCode.ValidationErrors">
+            <summary>
+            Validation errors
+            </summary>
+        </member>
+        <member name="F:Nbn.eCommerce.ItemService.Utility.ServiceCreateResultCode.InternalError">
+            <summary>
+            Internal error
+            </summary>
+        </member>
+        <member name="T:Nbn.eCommerce.ItemService.Utility.ServiceGetResult`1">
+            <summary>
+            Resource describing the result of a service request that reads resource state.
+            </summary>
+            <typeparam name="TResponse">Type of service result being returned.</typeparam>
+        </member>
+        <member name="M:Nbn.eCommerce.ItemService.Utility.ServiceGetResult`1.#ctor(Nbn.eCommerce.ItemService.Utility.ServiceGetResultCode,`0,System.Collections.Generic.IEnumerable{System.ComponentModel.DataAnnotations.ValidationResult})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Nbn.eCommerce.ItemService.Utility.ServiceGetResult`1"/> class.
+            </summary>
+            <param name="resultCode">Enumeration describing the result of the request</param>
+            <param name="resource">The TResponse resource returned if successful</param>
+            <param name="validationErrors">A collection of validation errors that occurred during the request execution.</param>
+        </member>
+        <member name="P:Nbn.eCommerce.ItemService.Utility.ServiceGetResult`1.ResultCode">
+            <summary>
+            Gets or sets the result code.
+            </summary>
+        </member>
+        <member name="P:Nbn.eCommerce.ItemService.Utility.ServiceGetResult`1.Resource">
+            <summary>
+            Gets or sets the returned resource
+            </summary>
+        </member>
+        <member name="P:Nbn.eCommerce.ItemService.Utility.ServiceGetResult`1.ValidationErrors">
+            <summary>
+            Gets or sets the list of errors that resulted from the operation.
+            </summary>
+        </member>
+        <member name="T:Nbn.eCommerce.ItemService.Utility.ServiceGetResultCode">
+            <summary>
+            Enumeration describing the expected results from a service get request.
+            </summary>
+        </member>
+        <member name="F:Nbn.eCommerce.ItemService.Utility.ServiceGetResultCode.Success">
+            <summary>
+            Request was successful
+            </summary>
+        </member>
+        <member name="F:Nbn.eCommerce.ItemService.Utility.ServiceGetResultCode.ValidationErrors">
+            <summary>
+            The request failed due to validation errors
+            </summary>
+        </member>
+        <member name="F:Nbn.eCommerce.ItemService.Utility.ServiceGetResultCode.NotFound">
+            <summary>
+            The requested resource was not found
+            </summary>
+        </member>
+        <member name="F:Nbn.eCommerce.ItemService.Utility.ServiceGetResultCode.NotAuthorized">
+            <summary>
+            The requested resource was not found
+            </summary>
+        </member>
+        <member name="T:Nbn.eCommerce.ItemService.Utility.ServiceResultExtensions">
+            <summary>
+            ServiceResultExtensions class
+            </summary>
+        </member>
+        <member name="M:Nbn.eCommerce.ItemService.Utility.ServiceResultExtensions.ToServiceChangeResult(Nbn.eCommerce.ItemService.Utility.RepositoryChangeResult)">
+            <summary>
+            Converts to ServiceChangeResult
+            </summary>
+            <param name="rcr">RepositoryChangeResult handle</param>
+            <returns>ServiceChangeResult handle</returns>
+        </member>
+        <member name="M:Nbn.eCommerce.ItemService.Utility.ServiceResultExtensions.ToServiceGetResult``1(Nbn.eCommerce.ItemService.Utility.RepositoryGetResult{``0})">
+            <summary>
+            Converts to ServiceGetResult
+            </summary>
+            <typeparam name="T">type</typeparam>
+            <param name="rgr">RepositoryGetResult handle</param>
+            <returns>ServiceGetResult handle</returns>
+        </member>
+        <member name="M:Nbn.eCommerce.ItemService.Utility.ServiceResultExtensions.ToServiceCreateResult``1(Nbn.eCommerce.ItemService.Utility.RepositoryCreateResult{``0})">
+            <summary>
+            Converts to Service Create Result
+            </summary>
+            <typeparam name="T">type</typeparam>
+            <param name="rcr">repository create result</param>
+            <returns>ServiceCreateResult handle</returns>
+        </member>
+        <member name="T:Nbn.eCommerce.ItemService.Utility.TransientFaultHandling">
+            <summary>
+            Provides all sql server transient exceptions information.
+            </summary>
+        </member>
+        <member name="M:Nbn.eCommerce.ItemService.Utility.TransientFaultHandling.IsTransient(System.Exception)">
+            <summary>
+            Determines whether the specified exception represents a transient failure that can be compensated by a retry.
+            </summary>
+            <param name="ex">The exception object to be verified.</param>
+            <returns>true if the specified exception is considered as transient; otherwise, false.</returns>
+        </member>
+        <member name="T:Nbn.eCommerce.ItemService.Utility.Validate">
+            <summary>
+            Class for handling standard Request Object Validations
+            </summary>
+        </member>
+        <member name="M:Nbn.eCommerce.ItemService.Utility.Validate.ThatRequiredValueIsPresent(System.String,System.String,System.Collections.Generic.List{System.ComponentModel.DataAnnotations.ValidationResult})">
+            <summary>
+            Validates that a required string value is present on a request
+            </summary>
+            <param name="value">Value to check</param>
+            <param name="name">Member name</param>
+            <param name="validationResults">A list of validation results to add to and return</param>
+            <returns>An appended list of validation errors.</returns>
+        </member>
+        <member name="M:Nbn.eCommerce.ItemService.Utility.Validate.ThatRequiredValueIsGuid(System.String,System.String,System.Collections.Generic.List{System.ComponentModel.DataAnnotations.ValidationResult})">
+            <summary>
+            Validates that a required string value is of Guid Type
+            </summary>
+            <param name="value">Value to check</param>
+            <param name="name">Member name</param>
+            <param name="validationResults">A list of validation results to add to and return</param>
+            <returns>An appended list of validation errors.</returns>
+        </member>
+        <member name="M:Nbn.eCommerce.ItemService.Utility.Validate.ThatRequiredObjectIsPresent(System.Object,System.String,System.Collections.Generic.List{System.ComponentModel.DataAnnotations.ValidationResult})">
+            <summary>
+            Validates that a required object is present on a request
+            </summary>
+            <param name="value">Object to check</param>
+            <param name="name">Member name</param>
+            <param name="validationResults">A list of validation results to add to and return</param>
+            <returns>An appended list of validation errors.</returns>
+        </member>
+        <member name="M:Nbn.eCommerce.ItemService.Utility.Validate.ThatListIsNotEmpty``1(System.Collections.Generic.IEnumerable{``0},System.String,System.Collections.Generic.List{System.ComponentModel.DataAnnotations.ValidationResult})">
+            <summary>
+            Validates that a required object is present on a request
+            </summary>
+            <typeparam name="T">type</typeparam>
+            <param name="value">value</param>
+            <param name="name">name</param>
+            <param name="validationResults">validation results</param>
+            <returns>validations results list</returns>
+        </member>
+        <member name="M:Nbn.eCommerce.ItemService.Utility.Validate.ThatMaxLengthRequirementIsMet(System.String,System.Int32,System.String,System.Collections.Generic.List{System.ComponentModel.DataAnnotations.ValidationResult})">
+            <summary>
+            Validates a maximum string length isn't exceeded
+            </summary>
+            <param name="value">Value to check</param>
+            <param name="length">Maximum length to compare</param>
+            <param name="name">Member name</param>
+            <param name="validationResults">A list of validation results to add to and return</param>
+            <returns>An appended list of validation errors.</returns>
+        </member>
+        <member name="M:Nbn.eCommerce.ItemService.Utility.Validate.ThatMaxAndMinLengthRequirementIsMet(System.String,System.Int32,System.Int32,System.String,System.Collections.Generic.List{System.ComponentModel.DataAnnotations.ValidationResult})">
+            <summary>
+            Validates a maximum  and minimum string length isn't exceeded
+            </summary>
+            <param name="value">Value to check</param>
+            <param name="minlength">min length</param>
+            <param name="maxlength">max length</param>
+            <param name="name">Member name</param>
+            <param name="validationResults">A list of validation results to add to and return</param>
+            <returns>An appended list of validation errors.</returns>
+        </member>
+        <member name="M:Nbn.eCommerce.ItemService.Utility.Validate.ThatMinLengthRequirementIsMet(System.String,System.Int32,System.String,System.Collections.Generic.List{System.ComponentModel.DataAnnotations.ValidationResult})">
+            <summary>
+            Validates a minimum string length.
+            </summary>
+            <param name="value">Value to check</param>
+            <param name="length">Minimum length to compare</param>
+            <param name="name">Member name</param>
+            <param name="validationResults">A list of validation results to add to and return</param>
+            <returns>An appended list of validation errors.</returns>
+        </member>
+        <member name="M:Nbn.eCommerce.ItemService.Utility.Validate.ThatListValuesAreUnique``1(System.Collections.Generic.IReadOnlyList{``0},System.String,System.Collections.Generic.List{System.ComponentModel.DataAnnotations.ValidationResult})">
+            <summary>
+            Checks a list of resources for uniqueness.
+            </summary>
+            <typeparam name="T">Type of resource to compare</typeparam>
+            <param name="values">A list of resources.</param>
+            <param name="name">Member name</param>
+            <param name="validationResults">A list of validation results to add to and return</param>
+            <returns>An appended list of validation errors.</returns>
+        </member>
+        <member name="M:Nbn.eCommerce.ItemService.Utility.Validate.ThatStringAdheresToFormat(System.String,System.String,System.Text.RegularExpressions.Regex,System.String,System.Collections.Generic.List{System.ComponentModel.DataAnnotations.ValidationResult})">
+            <summary>
+            Validates that a string matches a given content and format
+            </summary>
+            <param name="value">String to validate.</param>
+            <param name="name">Name of the object property that the string represents</param>
+            <param name="regex">A regular expression object that expresses the desired string format and content</param>
+            <param name="message">The message that describes the content validation issue if the string does not match the regex</param>
+            <param name="validationResults">A list of validation results to populate with any validation issues.</param>
+            <returns>An appended list of validation errors.</returns>
+        </member>
+        <member name="M:Nbn.eCommerce.ItemService.Utility.Validate.ThatDomainObjectCanConstructSafely``1(System.Func{``0},System.String,``0@)">
+            <summary>
+            Helper funcition that safely constructs a domain object and traps any exceptions it throws, turning them into
+            a list of validation results.
+            </summary>
+            <remarks>This allows us to leverage the validation code in the domain objects without having to re-write it externally somewhere else.</remarks>
+            <typeparam name="TDomain">Type of the Domain Object</typeparam>
+            <param name="func">A function delegate used to construct the domain object</param>
+            <param name="name">The name of the parameter being validated.</param>
+            <param name="domain">An output parameter containing the constructed domain object if successful.</param>
+            <returns>A list of validation errors.</returns>
+        </member>
+        <member name="M:Nbn.eCommerce.ItemService.Utility.Validate.ThatRequiredValueIsInEnum``2(System.Object,System.String,System.Collections.Generic.List{System.ComponentModel.DataAnnotations.ValidationResult})">
+            <summary>
+            Validate the supplied value to ensure that it is defined in the specified enum.
+            </summary>
+            <typeparam name="TEnum">The type of enum to validate.</typeparam>
+            <typeparam name="TValue">The type of value to validate (must match enum underlying type).</typeparam>
+            <param name="value">The integer to validate</param>
+            <param name="name">The name of the parameter being validated.</param>
+            <param name="validationResults">A list of validation results to populate with any validation issues.</param>
+            <returns>A list of validation errors.</returns>
+        </member>
+        <member name="M:Nbn.eCommerce.ItemService.Utility.Validate.ThatStringIsAGuid(System.String,System.String,System.Collections.Generic.List{System.ComponentModel.DataAnnotations.ValidationResult})">
+            <summary>
+            Verifies whether given string is a Guid
+            </summary>
+            <param name="value">value</param>
+            <param name="name">name</param>
+            <param name="validationResults">validation results</param>
+            <returns>Validation result list</returns>
+        </member>
+        <member name="M:Nbn.eCommerce.ItemService.Utility.Validate.ToValidationResults(System.Exception)">
+            <summary>
+            Formats an exception as a list of validation results
+            </summary>
+            <param name="ex">Exception to format</param>
+            <returns>A list of validation results</returns>
+        </member>
+        <member name="M:Nbn.eCommerce.ItemService.Utility.Validate.ThatValueTypeIsInRange``1(``0,``0,``0,System.String,System.Collections.Generic.List{System.ComponentModel.DataAnnotations.ValidationResult})">
+            <summary>
+            Validates that a required object is within a specified min and max range.
+            </summary>
+            <typeparam name="T">A comparable value type</typeparam>
+            <param name="value">The value to test</param>
+            <param name="minValue">Minimum acceptable value</param>
+            <param name="maxValue">Maximum acceptable value</param>
+            <param name="name">The name of the property being compared</param>
+            <param name="validationResults">A list of validation results</param>
+            <returns>ValidationResult results</returns>
+        </member>
+    </members>
+</doc>
